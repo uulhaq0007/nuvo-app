@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-[16px] leading-[1.8] text-body antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold text-ink;
+    line-height: 1.25;
+  }
+  ::selection {
+    @apply bg-brand text-white;
+  }
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { @apply bg-haze; }
+  ::-webkit-scrollbar-thumb { @apply bg-brand-grad; border-radius: 9px; }
+}
+
+@layer components {
+  /* Pill buttons — the template's signature shape */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-9 py-[15px]
+           font-display text-[16px] font-semibold transition-all duration-300;
+  }
+  .btn-grad {
+    @apply btn bg-brand-grad text-white shadow-lift hover:-translate-y-1 hover:bg-brand-grad-r;
+  }
+  .btn-white {
+    @apply btn bg-white text-ink shadow-soft hover:-translate-y-1 hover:bg-brand-grad hover:text-white;
+  }
+  .btn-outline {
+    @apply btn border-2 border-brand text-brand hover:-translate-y-1 hover:bg-brand hover:text-white;
+  }
+
+  .section { @apply py-16 lg:py-[100px]; }
+
+  .sec-title {
+    @apply font-display text-[30px] font-bold leading-tight text-ink sm:text-[36px] lg:text-[42px];
+  }
+  .sec-lead {
+    @apply mx-auto mt-4 max-w-[640px] text-[16px];
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-3 rounded-full bg-haze p-1.5 pr-6 text-[14px] font-medium text-ink;
+  }
+  .badge-pill > span:first-child {
+    @apply rounded-full bg-brand-grad px-4 py-1 text-[13px] font-semibold text-white;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  .field {
+    @apply w-full rounded-lg border border-transparent bg-white px-6 py-4 text-[15px] text-ink
+           shadow-card outline-none transition-colors duration-200 placeholder:text-body/70 focus:border-brand;
+  }
+  .field-error { @apply border-red-400 focus:border-red-500; }
+
+  /* Organic blob used behind hero / testimonials / footer */
+  .blob {
+    @apply bg-brand-grad-br;
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+}
+
+@layer utilities {
+  .text-grad {
+    @apply bg-brand-grad-r bg-clip-text text-transparent;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
