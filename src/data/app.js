@@ -1,3 +1,6 @@
+// Public assets live under the deploy base (e.g. /nuvo-app/ on GitHub Pages).
+const BASE = import.meta.env.BASE_URL
+
 export const brand = {
   name: 'Nuvo',
   wordmark: 'Nuvo.',
@@ -165,25 +168,25 @@ export const testimonials = [
     quote: 'I had tried four of these and quit all of them by week three. Nuvo is the first one where the numbers were right on day one, so I never had to go correcting it.',
     name: 'Tomas Delacroix',
     role: 'Freelance Illustrator',
-    avatar: '/images/avatar-1.jpg',
+    avatar: `${BASE}images/avatar-1.jpg`,
   },
   {
     quote: 'The subscription radar found nine dollars a month I had been paying to something I cancelled in 2023. It paid for itself before I finished setting it up.',
     name: 'Wren Ashbury',
     role: 'Product Manager',
-    avatar: '/images/avatar-2.jpg',
+    avatar: `${BASE}images/avatar-2.jpg`,
   },
   {
     quote: 'We run the household budget out of it now. My partner can see the shared goals without seeing my personal account, which was the exact thing we needed.',
     name: 'Elena Marchetti',
     role: 'Secondary Teacher',
-    avatar: '/images/avatar-3.jpg',
+    avatar: `${BASE}images/avatar-3.jpg`,
   },
   {
     quote: 'As a sole trader the receipt capture alone saves me a weekend every quarter. My accountant has stopped sending me passive-aggressive emails.',
     name: 'Sabine Holloway',
     role: 'Ceramicist',
-    avatar: '/images/avatar-4.jpg',
+    avatar: `${BASE}images/avatar-4.jpg`,
   },
 ]
 
@@ -196,8 +199,8 @@ export const posts = [
     excerpt: 'We interviewed 140 people who had abandoned a budgeting app. Almost none of them blamed the budget — they blamed the data entry.',
     author: 'Nadia Kaur',
     role: 'Head of Product',
-    avatar: '/images/author-3.jpg',
-    image: '/images/blog-1.jpg',
+    avatar: `${BASE}images/author-3.jpg`,
+    image: `${BASE}images/blog-1.jpg`,
   },
   {
     slug: 'open-banking-explained',
@@ -207,8 +210,8 @@ export const posts = [
     excerpt: 'What actually happens when you connect a bank account to an app — who sees what, what they can do with it, and how to revoke it.',
     author: 'Idris Bello',
     role: 'Security Engineer',
-    avatar: '/images/author-2.jpg',
-    image: '/images/blog-2.jpg',
+    avatar: `${BASE}images/author-2.jpg`,
+    image: `${BASE}images/blog-2.jpg`,
   },
   {
     slug: 'designing-calm-financial-ui',
@@ -218,8 +221,8 @@ export const posts = [
     excerpt: 'Red numbers and alarm badges make people close the app. Here is the colour and copy system we landed on instead.',
     author: 'Malachi Okoro',
     role: 'Design Lead',
-    avatar: '/images/author-1.jpg',
-    image: '/images/blog-3.jpg',
+    avatar: `${BASE}images/author-1.jpg`,
+    image: `${BASE}images/blog-3.jpg`,
   },
 ]
 

@@ -31,7 +31,7 @@ export default function VideoBlock() {
           {/* Media */}
           <div className="relative">
             <img
-              src="/images/video.jpg"
+              src={`${import.meta.env.BASE_URL}images/video.jpg`}
               alt="The Nuvo product team reviewing designs"
               className="h-[320px] w-full object-cover lg:h-[520px]"
               loading="lazy"
